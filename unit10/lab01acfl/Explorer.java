@@ -204,6 +204,19 @@ public class Explorer {
      */
     public static void explore(ArrayList<String> path, int steps) {
         // TODO build a recursive function
+        if (steps = 0) return;
+        }
+        
+        Edge WhereWeAre = path.get(path.size()-1);
+
+        System.out.println("We are at" + WhereWeAre);
+
+        for (String next :map.getNeighbors(WhereWeAre)){
+            System.out.println("We can get to" + next);
+            ArrayList<String> next = new ArrayList<String>(path); //makes copy
+            pathNext.add(next);
+            explore(pathNext, steps);
+        }
 
     }
 
@@ -217,7 +230,7 @@ public class Explorer {
 
         // where can you get in 8 steps? use map.getNeighbors
         ArrayList<String> path = new ArrayList<String>();
-        path.add("A1");
+        path.add("C4");
         explore(path, 8);
 
         // how far is that?
