@@ -2,33 +2,28 @@ package unit10;
 public class Piv2 {
 
 //π = 4(1−(1/3)+(1/5)−(1/7)+(1/9)−⋯)
-//I made a function without the for loop previously but the outputs were way off, so I added a loop inside. Is this okay?
 
-    public static double piDay(int n, boolean subtract) {
-        double pi = 0.0;
-        double denom = 1.0;
+    public static double piDay(int n, boolean subtract, double pi, double denom) {
         if (n == 0) {
             pi = 4*(1-1/denom);
         }
         else {
-            for (int i = 0; i < n; i++){
-                if (subtract == true) {
+                if (subtract) {
                     pi -= 1/denom;
+                    denom += 2.0;
+                    piDay(n-2, !subtract, pi, denom);
                 }
-                else if (subtract == false){
+                else if (!subtract){
                     pi += 1/denom;
-                }
-            denom += 2.0;
-            subtract= !subtract;
-
-            }   
-            pi *= 4;
+                    denom += 2.0;
+                    piDay(n-2, !subtract, pi, denom);
+                } 
         }
-        return pi;
+        return pi=4*(1-1/denom);
     }
 
     public static void main(String args[]) {
-        double pi = piDay(99999, false);
+        double pi = piDay(60, false, 0.0, 1.0);
         System.out.println("Pi = " + pi);
     }
 }
