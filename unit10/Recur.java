@@ -81,7 +81,7 @@ public class Recur {
         return prob2(b, a%b); //return (74, 37) -> 74/37=2 so a%b==0 is true, return b which is 37
     }
 
-    public static int prob3(int a, int b){ //What kind of function is this? test variables a: 3 b: 3
+    public static int prob3(int a, int b){ //"What kind of function is this?"" test variables a: 3 b: 3
         if (a==0) //when a is 0
         return 1; // stop and return 1
         else
