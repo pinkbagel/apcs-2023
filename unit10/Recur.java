@@ -58,7 +58,7 @@ public class Recur {
             return "" + n % 2;
         return mop(n / 2) + n % 2;
     }
-    // if n = 3, 1 + "" + 1 = 11
+    //if n = 3, 1 + "" + 1 = 11
 
     public static int cat(int x) {
         if (x == 0)
