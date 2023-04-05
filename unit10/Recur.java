@@ -58,7 +58,7 @@ public class Recur {
             return "" + n % 2;
         return mop(n / 2) + n % 2;
     }
-    //  if n = 3, 1 + "" + 1 = 11
+    // if n = 3, 1 + "" + 1 = 11
 
     public static int cat(int x) {
         if (x == 0)
@@ -103,7 +103,7 @@ public class Recur {
                                         // returns b^a
     }
 
-    //March 24 Bell Ringer correction
+    // March 24 Bell Ringer correction
 
     public static int mar24BellRinger() {
         int[][] mat = new int[4][3]; // 4 rows, 3 columns
@@ -112,7 +112,7 @@ public class Recur {
                 if (r < c) {
                     mat[r][c] = 1;
                 } else if (r == c) { // Since r,c= 0, it returns 2 for mat[0][0].
-                    mat[r][c] = 2;// then c increments, resulting r < c, so it returns 1 
+                    mat[r][c] = 2;// then c increments, resulting r < c, so it returns 1
                     mat[0][1] = 2; // So choice B is correct
                 } else {
                     mat[r][c] = 3;
