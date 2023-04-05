@@ -1,12 +1,12 @@
-package unit10;
+
 
 public class Piv2 {
 
-    // π = 4(1−(1/3)+(1/5)−(1/7)+(1/9)−⋯)
+    // π = 4(1−(1/3)+(1/5)−(1/7)+(1/9)−⋯)Leibniz
 
     public static double piDay(int n, boolean subtract, double pi, double denom) {
-        if (n == 0) {
-            pi = 4 * (1 - 1 / denom);
+        if (n <= 0) {
+            return pi = 4 * (1 - 1 / denom);
         } else {
             if (subtract) {
                 pi -= 1 / denom;
@@ -19,11 +19,11 @@ public class Piv2 {
 
             }
         }
-        return pi = 4 * (1 - 1 / denom);
+        return pi;
     }
 
     public static void main(String args[]) {
-        double pi = piDay(68, false, 0.0, 1.0);
+        double pi = piDay(67, false, 0.0, 1.0);
         System.out.println("Pi = " + pi);
     }
 }
