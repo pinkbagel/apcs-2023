@@ -103,7 +103,7 @@ public class Recur {
                                         // returns b^a
     }
 
-    // March 24 Bell Ringer correction
+    //March 24 Bell Ringer correction
 
     public static int mar24BellRinger() {
         int[][] mat = new int[4][3]; // 4 rows, 3 columns

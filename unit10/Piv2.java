@@ -2,7 +2,7 @@
 
 public class Piv2 {
 
-    // π = 4(1−(1/3)+(1/5)−(1/7)+(1/9)−⋯)Leibniz
+    //π = 4(1−(1/3)+(1/5)−(1/7)+(1/9)−⋯)Leibniz
 
     public static double piDay(int n, boolean subtract, double pi, double denom) {
         if (n <= 0) {
