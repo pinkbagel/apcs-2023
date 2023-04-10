@@ -15,8 +15,11 @@ public class Maze {
      * @param line the values to be placed in the maze.
      */
     public Maze(int rows, int cols, String line) {
-        // TODO part a
-
+        rows = 0;
+        cols = 0;
+        line = "";
+        // int start[] = {rows, cols};
+        // String s = new String(start);
     }
 
     /**
@@ -53,9 +56,20 @@ public class Maze {
      * @param c current column index
      */
     private void check(int r, int c) {
-        // TODO part b
+        boolean[][] visited;
+        if ((maze[r][c] != '#') && (maze[r][c]=='$')) { //if r,c isnt # and is $
+                hasSolution();
+        }
+            else if (!visited[r][c]) { //?????????????????????????
+                visited[r][c]= true;
+                check(r - 1, c);
+                check(r + 1, c);
+                check(r, c - 1);
+                check(r, c + 1);
+            }
+        }
 
-    }
+    
 
     /**
      * Determines if there is a solution (a path of '.') for this maze.
@@ -63,8 +77,7 @@ public class Maze {
      * @return true if the maze has a path from Start (@) to End ($).
      */
     public boolean hasSolution() {
-        // TODO part c
-        return false; // replace me!
+        return true; //??
 
     }
 

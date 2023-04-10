@@ -8,12 +8,31 @@ public class SpellingBee {
 
     private char[] letters;
     private char mustUse;
+    private String str;
 
-    // TODO construct me!
+    public SpellingBee(char[] letters, char mustUse) {
+        this.letters = letters;
+        this.mustUse = mustUse;
+    }
 
     public boolean checkWord(String word) {
-        // TODO implement me!
-        return true;
+
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < str.length(); i++) {
+            if (word.equals(chars[i])) {
+
+            }
+        }
+        for (int j = 0; j < str.length(); j++) {
+            if (str.contains(word.substring(0, 1)
+                    && str.contains(mustUse))
+                    && word.length() >= 4) {
+                return true;
+                System.out.println("correct");
+                
+            }
+        }
+        return false;
     }
 
     /**
@@ -40,7 +59,8 @@ public class SpellingBee {
         String[] words = loadFile("words_dropped.txt").split("\n");
         System.out.println("Loaded " + words.length + " words");
         // TODO solve me!
-        // SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
+        SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
+        // SpellingBee.checkWord("tangy");
 
         // TODO sort words!
 
