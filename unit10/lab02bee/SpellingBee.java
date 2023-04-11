@@ -16,19 +16,18 @@ public class SpellingBee {
     }
 
     public boolean checkWord(String word) {
-
-        char[] chars = str.toCharArray();
-        for (int i = 0; i < str.length(); i++) {
-            if (word.equals(chars[i])) {
-
+        //char[] chars = str.toCharArray();
+        for (int i = 0; i < letters.length(); i++) {
+            if (letters.contains(word.indexOf(i))) {
+                for (int j = 0; j < letters.length(); j++) {
+                    if (letters.contains(word.substring(0, 1)
+                            && letters.indexOf(mustUse))
+                            && word.length() >= 4) {
+                        return true;
+                        System.out.println("correct");
             }
         }
-        for (int j = 0; j < str.length(); j++) {
-            if (str.contains(word.substring(0, 1)
-                    && str.contains(mustUse))
-                    && word.length() >= 4) {
-                return true;
-                System.out.println("correct");
+
                 
             }
         }
@@ -60,7 +59,7 @@ public class SpellingBee {
         System.out.println("Loaded " + words.length + " words");
         // TODO solve me!
         SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
-        // SpellingBee.checkWord("tangy");
+        // System.out.println(checkWord("tangy"));
 
         // TODO sort words!
 
