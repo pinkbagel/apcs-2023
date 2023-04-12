@@ -1,3 +1,4 @@
+package unit10;
 
 public class Piv2 {
 
@@ -5,24 +6,20 @@ public class Piv2 {
 
     public static double piDay(int n, boolean subtract, double pi, double denom) {
         if (n <= 0) {
-            return pi = 4 * (1 - 1 / denom);
+            return 4*pi;
         } else {
             if (subtract) {
                 pi -= 1 / denom;
-                denom += 2.0;
-                return piDay(n - 2, !subtract, pi, denom);
-            } else if (!subtract) {
+            } else  {
                 pi += 1 / denom;
-                denom += 2.0;
-                return piDay(n - 2, !subtract, pi, denom);
-
             }
+            denom += 2.0;
+            return piDay(n - 2, !subtract, pi, denom);
         }
-        return pi;
     }
 
     public static void main(String args[]) {
-        double pi = piDay(67, false, 0.0, 1.0);
+        double pi = piDay(6900, false, 0.0, 1.0);
         System.out.println("Pi = " + pi);
     }
 } 
