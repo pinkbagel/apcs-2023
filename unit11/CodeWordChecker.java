@@ -13,7 +13,7 @@ public class CodeWordChecker implements StringChecker {
     private int min, max; //minimum & maximum amt of letters
     private String contain; //str shouldn't contain this String
 
-    public CodeWordChecker(int max, int min, String contain){ //1st constructor
+    public CodeWordChecker(int min, int max, String contain){ //1st constructor
         this.max = max;
         this.min = min;
         this.contain = contain;
