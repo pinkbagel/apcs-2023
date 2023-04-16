@@ -3,6 +3,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class SpellingBee {
 
@@ -16,20 +17,19 @@ public class SpellingBee {
     }
 
     public boolean checkWord(String word) {
-        //char[] chars = str.toCharArray();
-        for (int i = 0; i < letters.length(); i++) {
-            if (letters.contains(word.indexOf(i))) {
-                for (int j = 0; j < letters.length(); j++) {
-                    if (letters.contains(word.substring(0, 1)
-                            && letters.indexOf(mustUse))
-                            && word.length() >= 4) {
+        // char[] chars = str.toCharArray();
+        boolean x = true;
+        if (word.length() >= 4) {
+            int i = 0;
+            while (i != word.length() && x == true) {
+                x = false;
+                for (int j = 0; j < letters.length; j++) {
+                    if (word.charAt(i) == letters[j]) {
                         return true;
-                        System.out.println("correct");
+                    }
+                }
             }
-        }
 
-                
-            }
         }
         return false;
     }
@@ -59,11 +59,21 @@ public class SpellingBee {
         System.out.println("Loaded " + words.length + " words");
         // TODO solve me!
         SpellingBee bee = new SpellingBee("ranglty".toCharArray(), 'y');
-        // System.out.println(checkWord("tangy"));
+        for (int i = 0; i < words.length; i++) {
+            if (bee.checkWord(words[i])) {
+                System.out.println(words[i]);
+            }
+        }
 
         // TODO sort words!
+        Arrays.sort(words);
 
         // TODO what position in the sorted list is the word "search" ?
+        for (int j = 0; j < words.length; j++) {
+            if (words[j] == "search") {
+                System.out.println(j);
+            }
+        }
 
     }
 }
