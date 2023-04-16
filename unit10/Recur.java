@@ -38,7 +38,7 @@ public class Recur {
         return (input.charAt(0) == input.charAt(1) || has(input.substring(1)));
     }
 
-    public static boolean pot(String input) {
+    public static boolean pot(String input) {//palindrome detector
         if (input.length() < 2)
             return true;
         return (input.charAt(0) == input.charAt(input.length() - 1) // it needs to satisfy all recursion rounds to
