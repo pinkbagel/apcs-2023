@@ -1,5 +1,6 @@
 package unit11;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -46,8 +47,11 @@ public class ReviewAnalysis {
      * No element of allReviews is null.
      */
     public double getAverageRating() {
-        /* to be implemented in part (a) */
-        return -1; // replace me!
+        int ratingSum=0;
+        for(Review rev: allReviews){
+            ratingSum+=rev.getRating();
+        }
+        return ratingSum/(double)allReviews.length;
     }
 
     /**
@@ -58,8 +62,19 @@ public class ReviewAnalysis {
      * Postcondition: allReviews is unchanged.
      */
     public ArrayList<String> collectComments() {
-        /* to be implemented in part (b) */
-        return null; // replace me!
+        ArrayList<String> comments = new ArrayList<String>();
+
+        for(int i=0; i<allReviews.length; i++){
+            String y = allReviews[i].getComment();
+            if(y.indexOf("!") >= 0){
+                String format = i + "-" + y;
+                String chara = format.substring(format.length()-1);
+                if(!chara.equals("!") && !chara.equals("."))
+                format +=".";
+                comments.add(format);
+            }
+        }
+        return comments;
     }
 
     public static void check(boolean test) throws AssertionError {

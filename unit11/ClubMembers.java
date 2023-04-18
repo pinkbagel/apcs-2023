@@ -32,10 +32,10 @@ class MemberInfo {
 
 public class ClubMembers {
 
-    private ArrayList<MemberInfo> members;
+    private ArrayList<MemberInfo> memberList;
 
-    public ClubMembers(ArrayList<MemberInfo> members) {
-        this.members = members;
+    public ClubMembers(ArrayList<MemberInfo> memberList) {
+        this.memberList = memberList;
     }
 
     public ClubMembers() {
@@ -43,13 +43,25 @@ public class ClubMembers {
     }
 
     public void addMembers(String[] names, int gradYear) {
-        // TODO a
+        for(String name: names){
+            memberList.add(new MemberInfo(name, gradYear, true));
+        }
 
     }
 
     public ArrayList<MemberInfo> removeMembers(int year) {
-        // TODO b;
-        return null; // replace me
+        ArrayList<MemberInfo> goodStanding = new ArrayList<MemberInfo>();
+        int i=0;
+        while(i<memberList.size()){
+            if (memberList.get(i).getGradYear()<= year){
+                MemberInfo removed = memberList.remove(i);
+                if(removed.inGoodStanding()){
+                    goodStanding.add(removed);
+                }
+            }
+            else i++;
+        }
+        return goodStanding;
     }
 
     public static void check(boolean test) throws AssertionError {
@@ -81,9 +93,9 @@ public class ClubMembers {
         ArrayList<MemberInfo> returned = cm.removeMembers(2018);
         check(returned.size() == 1);
         check(returned.get(0) == folks[1]);
-        check(cm.members.size() == 2);
-        check(cm.members.contains(folks[0]));
-        check(cm.members.contains(folks[3]));
+        check(cm.memberList.size() == 2);
+        check(cm.memberList.contains(folks[0]));
+        check(cm.memberList.contains(folks[3]));
         System.out.println("Happy Panda! \uD83D\uDC3C");
 
     }
