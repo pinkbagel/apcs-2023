@@ -9,7 +9,7 @@ public class SpellingBee {
 
     private char[] letters;
     private char mustUse;
-    private String str;
+    // private String str;
 
     public SpellingBee(char[] letters, char mustUse) {
         this.letters = letters;
@@ -17,7 +17,6 @@ public class SpellingBee {
     }
 
     public boolean checkWord(String word) {
-        // char[] chars = str.toCharArray();
         boolean x = true;
         if (word.length() >= 4) {
             int i = 0;
@@ -29,10 +28,42 @@ public class SpellingBee {
                     }
                 }
             }
-
+            return true;
         }
         return false;
     }
+
+    // public boolean mustUseCheck(String word) {
+    //     boolean y = false;
+    //     for (int i = 0; i <= word.length(); i++) {
+    //         if (word.indexOf(i) == mustUse) {
+    //             y = true;
+    //         }
+    //         // } else {
+    //         // y=false;
+    //         // return false;
+    //         // }
+    //     }
+    //     return y;
+    // }
+
+    // public boolean lettersValid(String word) {
+    //     boolean x = true;
+    //     for (int i = 0; i < word.length(); i++) {
+    //         boolean charValid = false;
+    //         for (int j = 0; j < letters.length; j++) {
+    //             if (word.charAt(i) == letters[j]) {
+    //                 charValid = true;
+    //                 break;
+    //             }
+    //         }
+    //         if (!charValid) {
+    //             x = false;
+    //             break;
+    //         }
+    //     }
+    //     return x;
+    // }
 
     /**
      * Loads the contents of file "filename" as a String.
@@ -62,6 +93,9 @@ public class SpellingBee {
         for (int i = 0; i < words.length; i++) {
             if (bee.checkWord(words[i])) {
                 System.out.println(words[i]);
+            } else {
+                System.out.println("No words :(");
+                break;
             }
         }
 
@@ -70,10 +104,10 @@ public class SpellingBee {
 
         // TODO what position in the sorted list is the word "search" ?
         for (int j = 0; j < words.length; j++) {
-            if (words[j] == "search") {
+            if (words[j].equals("search")) {
                 System.out.println(j);
+                break;
             }
         }
-
     }
 }
