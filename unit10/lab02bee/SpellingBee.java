@@ -18,52 +18,43 @@ public class SpellingBee {
 
     public boolean checkWord(String word) {
         boolean x = true;
-        if (word.length() >= 4) {
-            int i = 0;
-            while (i != word.length() && x == true) {
-                x = false;
-                for (int j = 0; j < letters.length; j++) {
-                    if (word.charAt(i) == letters[j]) {
-                        return true;
-                    }
-                }
-            }
+        if (word.length() >= 4 && lettersValid(word)&& mustUseCheck(word)) {
             return true;
         }
         return false;
     }
 
-    // public boolean mustUseCheck(String word) {
-    //     boolean y = false;
-    //     for (int i = 0; i <= word.length(); i++) {
-    //         if (word.indexOf(i) == mustUse) {
-    //             y = true;
-    //         }
-    //         // } else {
-    //         // y=false;
-    //         // return false;
-    //         // }
-    //     }
-    //     return y;
-    // }
+    public boolean mustUseCheck(String word) {
+        boolean y = false;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == mustUse) {
+                y = true;
+            }
+            // } else {
+            // y=false;
+            // return false;
+            // }
+        }
+        return y;
+    }
 
-    // public boolean lettersValid(String word) {
-    //     boolean x = true;
-    //     for (int i = 0; i < word.length(); i++) {
-    //         boolean charValid = false;
-    //         for (int j = 0; j < letters.length; j++) {
-    //             if (word.charAt(i) == letters[j]) {
-    //                 charValid = true;
-    //                 break;
-    //             }
-    //         }
-    //         if (!charValid) {
-    //             x = false;
-    //             break;
-    //         }
-    //     }
-    //     return x;
-    // }
+    public boolean lettersValid(String word) {
+        boolean x = true;
+        for (int i = 0; i < word.length(); i++) {
+            boolean charValid = false;
+            for (int j = 0; j < letters.length; j++) {
+                if (word.charAt(i) == letters[j]) {
+                    charValid = true;
+                    break;
+                }
+            }
+            if (!charValid) {
+                x = false;
+                break;
+            }
+        }
+        return x;
+    }
 
     /**
      * Loads the contents of file "filename" as a String.
@@ -93,9 +84,8 @@ public class SpellingBee {
         for (int i = 0; i < words.length; i++) {
             if (bee.checkWord(words[i])) {
                 System.out.println(words[i]);
-            } else {
-                System.out.println("No words :(");
-                break;
+            // } else {
+            //     System.out.println("No words :(");
             }
         }
 
