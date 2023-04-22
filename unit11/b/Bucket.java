@@ -5,11 +5,11 @@ public class Bucket {
     private int value;
 
     public Bucket(int value) {
-        this.value = value;
+        this.value = value; //this. refers to the instance of the Bucket
     }
 
     public int getValue() {
-        return value;
+        return value; 
     }
 
     public void setValue(int value) {
@@ -43,9 +43,9 @@ public class Bucket {
         // value = 5;
         System.out.println(value);
 
-        // System.out.println("Within method:");
-        // updateValue(value);
-        // System.out.println(value);
+         System.out.println("Within method:");
+         updateValue(value);
+         System.out.println(value);
 
         // System.out.println("Within bucket:");
         // Bucket b = new Bucket(value);

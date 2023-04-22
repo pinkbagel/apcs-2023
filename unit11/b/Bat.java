@@ -19,7 +19,9 @@ public class Bat {
     }
 
     // what is the output of conditionalTest(3,-2)?
+    //   C
     // how much of this function do we need to inspect?
+    // two parts (the first if statment then else if)
 
     private int[] arr;
 
@@ -38,9 +40,11 @@ public class Bat {
         // System.out.println(s2);
     }
     // what does mystery() do to s1?
+    //add 1 to num every time arr[k] is bigger than 0 and even
 
     public static void main(String[] args) {
         // why do we need to instantiate a Bat?
+        // since conditionalTest is not static, you cant call conditionalTest without b
         Bat b = new Bat();
         // b.conditionalTest(3, -2);
 
