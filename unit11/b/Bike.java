@@ -1,6 +1,6 @@
 package unit11.b;
 
-class Vehicle {
+class Vehicle extends Object{
     private int numWheels;
 
     public Vehicle(int numWheels) {
@@ -13,6 +13,12 @@ class Vehicle {
 }
 
 // Code me! bikes have 2 wheels
-public class Bike {
-
+public class Bike extends Vehicle {
+    public Bike(){
+        super(2);
+    }
+    public static void main(String []args){
+        Bike bike = new Bike();
+        System.out.println(bike.toString());
+    }
 }
