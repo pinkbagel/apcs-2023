@@ -60,6 +60,13 @@ public class DoubleTrouble{
         System.out.println("Player1:" + play.player1);
         System.out.println("Player2:" + play.player2);
         }
+        System.out.println("---");
+        if(play.player1>play.player2){
+            System.out.println("Player 1 wins!");
+        }
+        else{
+            System.out.println("Player 2 wins!");
+        }
 
     }
 
