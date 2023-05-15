@@ -29,13 +29,13 @@ public class DoubleTrouble{
     }
 
     public void sevenOrDouble(){
-        if(rolla1+rolla2==7){
+        if((rolla1+rolla2)==7){
             player1 += 3;
         }
         if(rolla1==rolla2){
             player1 -= 5;
         }
-        if(rollb1+rollb2==7){
+        if((rollb1+rollb2)==7){
             player2 += 3;
         }
         if(rollb1==rollb2){
