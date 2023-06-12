@@ -7,7 +7,7 @@
 
 This project involves the following steps:
 1. Creating sprites and background art (pixel art)
-2. Research/learning more about Python and Pygame(game making platform) & animating sprites
+2. Research/learning more about Cs and Unity & animating sprites
 3. Basic plan/layout of the game code
 4. Executing! (code)
 5. Incorporating the sprites on the place holder shape
